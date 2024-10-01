@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '10.18.0'
+    implementation group: 'org.flywaydb', name: 'flyway-mysql', version: '10.18.0'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+}
+
+test {
+    useJUnitPlatform()
+}
